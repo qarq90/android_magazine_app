@@ -29,12 +29,12 @@
         android:layout_marginRight="30dp"
         android:background="@color/button_bg"
         android:orientation="horizontal"
-        android:padding="5dp"
+        android:padding="10dp"
         >
 
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:background="@color/button_bg"
             android:paddingRight="15dp"
             android:paddingLeft="20dp"
@@ -60,12 +60,12 @@
         android:layout_marginRight="30dp"
         android:background="@color/button_bg"
         android:orientation="horizontal"
-        android:padding="5dp"
+        android:padding="10dp"
         >
 
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:background="@color/button_bg"
             android:paddingRight="15dp"
             android:paddingLeft="20dp"
@@ -91,12 +91,12 @@
         android:layout_marginRight="30dp"
         android:background="@color/button_bg"
         android:orientation="horizontal"
-        android:padding="5dp"
+        android:padding="10dp"
         >
 
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:background="@color/button_bg"
             android:paddingRight="15dp"
             android:paddingLeft="20dp"
@@ -122,12 +122,12 @@
         android:layout_marginRight="30dp"
         android:background="@color/button_bg"
         android:orientation="horizontal"
-        android:padding="5dp"
+        android:padding="10dp"
         >
 
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:background="@color/button_bg"
             android:paddingRight="15dp"
             android:paddingLeft="20dp"
@@ -153,12 +153,12 @@
         android:layout_marginRight="30dp"
         android:background="@color/button_bg"
         android:orientation="horizontal"
-        android:padding="5dp"
+        android:padding="10dp"
         >
 
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:background="@color/button_bg"
             android:paddingRight="15dp"
             android:paddingLeft="20dp"
@@ -184,12 +184,12 @@
         android:layout_marginRight="30dp"
         android:background="@color/button_bg"
         android:orientation="horizontal"
-        android:padding="5dp"
+        android:padding="10dp"
         >
 
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:background="@color/button_bg"
             android:paddingRight="15dp"
             android:paddingLeft="20dp"
@@ -215,12 +215,12 @@
         android:layout_marginRight="30dp"
         android:background="@color/button_bg"
         android:orientation="horizontal"
-        android:padding="5dp"
+        android:padding="10dp"
         >
 
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:background="@color/button_bg"
             android:paddingLeft="20dp"
             android:paddingRight="15dp"

@@ -45,6 +45,8 @@ public class FashionPage extends AppCompatActivity {
         ECO_ECO_DB DatabaseObject = new ECO_ECO_DB(getApplicationContext());
         Cursor result = DatabaseObject.getArticles("Fashion");
 
+        int topMargin = 0;
+
         while (result.moveToNext()) {
             RelativeLayout articleCard = (RelativeLayout) getLayoutInflater().inflate(R.layout.activity_article_card, null);
             ImageView articleImage = articleCard.findViewById(R.id.articleImage);
@@ -62,7 +64,16 @@ public class FashionPage extends AppCompatActivity {
             Bitmap bitmap = BitmapFactory.decodeByteArray(imageData, 0, imageData.length);
             articleImage.setImageBitmap(bitmap);
 
+            RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams.MATCH_PARENT,
+                    RelativeLayout.LayoutParams.WRAP_CONTENT
+            );
+            layoutParams.topMargin = topMargin;
+            articleCard.setLayoutParams(layoutParams);
+
             FashionMain.addView(articleCard);
+
+            topMargin += 1000;
         }
     }
 }
