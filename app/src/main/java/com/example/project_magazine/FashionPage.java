@@ -24,7 +24,7 @@ public class FashionPage extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_fashion_page);
 
-        FashionMain = (RelativeLayout)findViewById(R.id.FashionMain);
+        FashionMain = (RelativeLayout) findViewById(R.id.FashionMain);
 
         LinearLayout goToBackToHomeHandler = (LinearLayout) findViewById(R.id.goBackToHome);
         goToBackToHomeHandler.setOnClickListener(new View.OnClickListener() {
@@ -46,14 +46,16 @@ public class FashionPage extends AppCompatActivity {
         Cursor result = DatabaseObject.getArticles("Fashion");
 
         while (result.moveToNext()) {
-            LinearLayout articleCard = (LinearLayout) getLayoutInflater().inflate(R.layout.activity_article_card, null);
+            RelativeLayout articleCard = (RelativeLayout) getLayoutInflater().inflate(R.layout.activity_article_card, null);
             ImageView articleImage = articleCard.findViewById(R.id.articleImage);
             TextView articleTitle = articleCard.findViewById(R.id.articleTitle);
-            TextView articleSubPara = articleCard.findViewById(R.id.articleSubPara);
+            TextView articleParaA = articleCard.findViewById(R.id.articleParaA);
+            TextView articleParaB = articleCard.findViewById(R.id.articleParaB);
             TextView articleAuthor = articleCard.findViewById(R.id.articleAuthor);
 
             articleTitle.setText(result.getString(result.getColumnIndexOrThrow("ARTICLE_TITLE")));
-            articleSubPara.setText(result.getString(result.getColumnIndexOrThrow("ARTICLE_PARA_A")));
+            articleParaA.setText(result.getString(result.getColumnIndexOrThrow("ARTICLE_PARA_A")));
+            articleParaB.setText(result.getString(result.getColumnIndexOrThrow("ARTICLE_PARA_B")));
             articleAuthor.setText(result.getString(result.getColumnIndexOrThrow("ARTICLE_AUTHOR")));
 
             byte[] imageData = result.getBlob(result.getColumnIndexOrThrow("ARTICLE_IMAGE"));
