@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_color"
+    tools:context=".AddArticlePage"
+    android:paddingTop="50dp"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/secondary_color"
+        android:text="A d d    A r t i c l e"
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:layout_marginTop="30dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/secondary_color"
+        android:text="Article Title"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_marginTop="90dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/articleTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="@color/secondary_color"
+        android:background="@drawable/rounded_corner"
+        android:hint="Enter title here..."
+        android:layout_marginTop="120dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/secondary_color"
+        android:text="Article Paragraph A"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_marginTop="170dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/articleParaA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="@color/secondary_color"
+        android:background="@drawable/rounded_corner"
+        android:hint="Enter paragraph here..."
+        android:layout_marginTop="200dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/secondary_color"
+        android:text="Article Paragraph B"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_marginTop="250dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/articleParaB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="@color/secondary_color"
+        android:background="@drawable/rounded_corner"
+        android:hint="Enter paragraph here..."
+        android:layout_marginTop="280dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/secondary_color"
+        android:text="Article Type"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_marginTop="330dp"
+        tools:ignore="MissingConstraints" />
+
+    <Spinner
+        android:id="@+id/articleType"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/articleParaB"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/secondary_color"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/rounded_corner"
+        android:padding="10dp"
+        android:spinnerMode="dropdown"
+        android:entries="@array/article_categories"
+        android:prompt="@string/select_category"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/secondary_color"
+        android:text="Article Image"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_marginTop="440dp"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/addImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="480dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/rounded_corner"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        >
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@color/button_bg"
+            android:paddingRight="15dp"
+            android:paddingLeft="20dp"
+            android:contentDescription="Like button"
+            android:src="@drawable/add_image" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:text="Choose Image"
+            android:textColor="@color/secondary_color"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/addArticle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="600dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/rounded_corner"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        >
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@color/button_bg"
+            android:paddingRight="15dp"
+            android:paddingLeft="20dp"
+            android:contentDescription="Like button"
+            android:src="@drawable/add_article" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:text="Add Article"
+            android:textColor="@color/secondary_color"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/goBackToHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="700dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/rounded_corner"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        >
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@color/button_bg"
+            android:paddingRight="15dp"
+            android:paddingLeft="20dp"
+            android:contentDescription="Like button"
+            android:src="@drawable/home" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:text="Back To Home Page"
+            android:textColor="@color/secondary_color"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+</RelativeLayout>

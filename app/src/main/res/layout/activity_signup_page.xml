@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_color"
+    tools:context=".SignupPage"
+    android:paddingTop="50dp"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="A u t h e n t i c a t i o n"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/secondary_color"
+        android:textSize="30dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Email ID"
+        android:textAlignment="center"
+        android:textColor="@color/secondary_color"
+        android:textSize="20dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/userEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/rounded_corner"
+        android:hint="Enter email here..."
+        android:textSize="16dp"
+        android:padding="10dp"
+        android:textColor="@color/secondary_color"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:text="Password"
+        android:textAlignment="center"
+        android:textColor="@color/secondary_color"
+        android:textSize="20dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/userPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/rounded_corner"
+        android:hint="Enter password here..."
+        android:textSize="16dp"
+        android:padding="10dp"
+        android:textColor="@color/secondary_color"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:text="Phone Number"
+        android:textAlignment="center"
+        android:textColor="@color/secondary_color"
+        android:textSize="20dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/userPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/rounded_corner"
+        android:hint="Enter phone number here..."
+        android:textSize="16dp"
+        android:padding="10dp"
+        android:textColor="@color/secondary_color"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:text="Username"
+        android:textAlignment="center"
+        android:textColor="@color/secondary_color"
+        android:textSize="20dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="450dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/rounded_corner"
+        android:hint="Enter Username here..."
+        android:padding="10dp"
+        android:textSize="16dp"
+        android:textColor="@color/secondary_color"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/goToLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="520dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/rounded_corner"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        >
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@color/button_bg"
+            android:paddingRight="15dp"
+            android:paddingLeft="20dp"
+            android:contentDescription="Like button"
+            android:src="@drawable/logout" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:text="Go To Login Page"
+            android:textColor="@color/secondary_color"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/goBackToHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="690dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/rounded_corner"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        >
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@color/button_bg"
+            android:paddingRight="15dp"
+            android:paddingLeft="20dp"
+            android:contentDescription="Like button"
+            android:src="@drawable/signup" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:text="SignUp"
+            android:textColor="@color/secondary_color"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+</RelativeLayout>

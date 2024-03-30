@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ArticleCard"
+    android:background="@color/primary_color"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/articleImage"
+        android:src="@drawable/logout"
+        />
+
+    <TextView
+        android:id="@+id/articleTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Article Title"
+        android:textSize="25dp"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:textColor="@color/secondary_color"
+        />
+
+    <TextView
+        android:id="@+id/articleSubPara"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's ..."
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:textColor="@color/secondary_color"
+        />
+
+    <TextView
+        android:id="@+id/articleAuthor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Article Author"
+        android:textSize="15dp"
+        android:padding="10dp"
+        android:textColor="@color/secondary_color"
+        />
+
+</LinearLayout>

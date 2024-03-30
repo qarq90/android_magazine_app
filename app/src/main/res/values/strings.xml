@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">project_magazine</string>
+    <!-- res/values/strings.xml -->
+    <string name="select_category">Select Category</string>
+    <!-- Define your categories here -->
+    <string-array name="article_categories">
+        <item>Entertainment</item>
+        <item>Sports</item>
+        <item>Fashion</item>
+        <item>Games</item>
+        <!-- Add more categories as needed -->
+    </string-array>
+
+</resources>
