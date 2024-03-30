@@ -15,7 +15,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="75dp"
         android:layout_marginRight="30dp"
-        android:text="project_name"
+        android:text="ECO ECO"
         android:textAlignment="center"
         android:textSize="30dp"
         tools:ignore="MissingConstraints" />
