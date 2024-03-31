@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -17,6 +18,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class FashionPage extends AppCompatActivity {
 
     RelativeLayout FashionMain;
+    ScrollView SC;
+    LinearLayout articleContainerLayout; 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +27,10 @@ public class FashionPage extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_fashion_page);
 
-        FashionMain = (RelativeLayout) findViewById(R.id.FashionMain);
+        FashionMain = findViewById(R.id.FashionMain);
+        articleContainerLayout = findViewById(R.id.articleContainerLayout); 
 
-        LinearLayout goToBackToHomeHandler = (LinearLayout) findViewById(R.id.goBackToHome);
+        LinearLayout goToBackToHomeHandler = findViewById(R.id.goBackToHome);
         goToBackToHomeHandler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,8 +49,6 @@ public class FashionPage extends AppCompatActivity {
         ECO_ECO_DB DatabaseObject = new ECO_ECO_DB(getApplicationContext());
         Cursor result = DatabaseObject.getArticles("Fashion");
 
-        int topMargin = 0;
-
         while (result.moveToNext()) {
             RelativeLayout articleCard = (RelativeLayout) getLayoutInflater().inflate(R.layout.activity_article_card, null);
             ImageView articleImage = articleCard.findViewById(R.id.articleImage);
@@ -64,16 +66,7 @@ public class FashionPage extends AppCompatActivity {
             Bitmap bitmap = BitmapFactory.decodeByteArray(imageData, 0, imageData.length);
             articleImage.setImageBitmap(bitmap);
 
-            RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
-                    RelativeLayout.LayoutParams.MATCH_PARENT,
-                    RelativeLayout.LayoutParams.WRAP_CONTENT
-            );
-            layoutParams.topMargin = topMargin;
-            articleCard.setLayoutParams(layoutParams);
-
-            FashionMain.addView(articleCard);
-
-            topMargin += 1000;
+            articleContainerLayout.addView(articleCard); 
         }
     }
 }

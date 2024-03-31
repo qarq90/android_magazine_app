@@ -1,43 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/GamesMain"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".GamesPage"
-    android:background="@color/primary_color"
-    >
+    android:background="@color/primary_color">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/secondary_color"
-        android:text="G a m e s"
+        android:text="GAMES"
         android:textAllCaps="true"
         android:layout_marginTop="50dp"
         android:textAlignment="center"
         android:textSize="30dp"
         tools:ignore="MissingConstraints" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/articleContainer"
+        android:layout_marginTop="150dp"
+        android:layout_above="@id/goBackToHome">
+
+        <LinearLayout
+            android:id="@+id/articleContainerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        </LinearLayout>
+    </ScrollView>
+
     <LinearLayout
         android:id="@+id/goBackToHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="730dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/rounded_corner"
         android:orientation="horizontal"
         android:padding="5dp"
-        >
+        android:visibility="invisible"
+        android:layout_marginBottom="50dp"
+        android:layout_alignParentBottom="true">
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:background="@color/button_bg"
-            android:paddingRight="15dp"
             android:paddingLeft="20dp"
+            android:paddingRight="15dp"
             android:contentDescription="Like button"
             android:src="@drawable/home" />
 
