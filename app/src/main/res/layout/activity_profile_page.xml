@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ProfileMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfilePage"
+    android:background="@color/primary_color"
     android:paddingTop="50dp"
-    android:background="@color/primary_color">
+    tools:context=".ProfilePage">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/secondary_color"
-        android:text="Profile"
-        android:textAllCaps="true"
         android:layout_marginTop="30dp"
+        android:text="Profile"
         android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/secondary_color"
         android:textSize="30dp"
         tools:ignore="MissingConstraints" />
 
@@ -24,66 +23,65 @@
         android:id="@+id/editTextUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
         android:layout_marginLeft="30dp"
+        android:layout_marginTop="100dp"
         android:layout_marginRight="30dp"
-        android:padding="10dp"
-        android:hint="Username"
         android:background="@drawable/rounded_corner"
+        android:hint="Username"
+        android:padding="10dp"
         android:textColor="@color/secondary_color"
-        android:textColorHint="@color/hint_color"/>
+        android:textColorHint="@color/hint_color" />
 
     <EditText
         android:id="@+id/editTextPhoneNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextUsername"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="30dp"
-        android:padding="10dp"
-        android:hint="Phone Number"
         android:background="@drawable/rounded_corner"
+        android:hint="Phone Number"
+        android:padding="10dp"
         android:textColor="@color/secondary_color"
-        android:textColorHint="@color/hint_color"/>
+        android:textColorHint="@color/hint_color" />
 
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextPhoneNumber"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="30dp"
-        android:padding="10dp"
-        android:hint="Email"
         android:background="@drawable/rounded_corner"
+        android:hint="Email"
+        android:padding="10dp"
         android:textColor="@color/secondary_color"
-        android:textColorHint="@color/hint_color"/>
+        android:textColorHint="@color/hint_color" />
 
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextEmail"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="30dp"
-        android:padding="10dp"
+        android:background="@drawable/rounded_corner"
         android:hint="Password"
         android:inputType="textPassword"
-        android:background="@drawable/rounded_corner"
+        android:padding="10dp"
         android:textColor="@color/secondary_color"
-        android:textColorHint="@color/hint_color"
-        />
+        android:textColorHint="@color/hint_color" />
 
     <LinearLayout
         android:id="@+id/goBackToHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextPassword"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/rounded_corner"
         android:orientation="horizontal"
@@ -93,9 +91,9 @@
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:background="@color/button_bg"
+            android:contentDescription="Like button"
             android:paddingLeft="20dp"
             android:paddingRight="15dp"
-            android:contentDescription="Like button"
             android:src="@drawable/home" />
 
         <TextView

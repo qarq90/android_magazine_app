@@ -1,7 +1,6 @@
 package com.example.project_magazine;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -12,6 +11,9 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AuthPage extends AppCompatActivity {
+
+    public String userEmail;
+    public String userPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +28,9 @@ public class AuthPage extends AppCompatActivity {
                 ECO_ECO_DB DatabaseObject = new ECO_ECO_DB(getApplicationContext());
                 EditText userEmailEditText = (EditText) findViewById(R.id.userAuthEmail);
                 EditText userPasswordEditText = (EditText) findViewById(R.id.userAuthPassword);
-                String userEmail = userEmailEditText.getText().toString();
-                String userPassword = userPasswordEditText.getText().toString();
+                userEmail = userEmailEditText.getText().toString();
+                userPassword = userPasswordEditText.getText().toString();
+                boolean success = DatabaseObject.checkIfUserExists(userEmail, userPassword);
 
                 String emailPattern = "[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}";
 
@@ -41,31 +44,12 @@ public class AuthPage extends AppCompatActivity {
                     return;
                 }
 
-                Cursor result = DatabaseObject.checkIfUserExists();
-                boolean isAuth = false;
-                String dbEmail = "";
-                String dbPassword = "";
-
-                while (result.moveToNext()) {
-                    dbEmail = result.getString(result.getColumnIndex("email"));
-                    dbPassword = result.getString(result.getColumnIndex("password"));
-
-                    if (dbEmail.equals(userEmail) && dbPassword.equals(userPassword)) {
-                        isAuth = true;
-                        Intent sendToProfile = new Intent(AuthPage.this, ProfilePage.class);
-                        sendToProfile.putExtra("username", dbEmail);
-                        sendToProfile.putExtra("password", dbPassword);
-                        startActivity(sendToProfile);
-                        break;
-                    }
+                if (success) {
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    Toast.makeText(getApplicationContext(), "Login success ", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Login failed ", Toast.LENGTH_LONG).show();
                 }
-
-                result.close();
-
-                if (!isAuth) {
-                    Toast.makeText(getApplicationContext(), "Invalid Credentials", Toast.LENGTH_LONG).show();
-                }
-
             }
         });
 

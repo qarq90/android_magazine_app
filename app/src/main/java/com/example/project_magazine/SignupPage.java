@@ -3,7 +3,6 @@ package com.example.project_magazine;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -50,7 +49,7 @@ public class SignupPage extends AppCompatActivity {
                     if (userEmail.matches(emailPattern) && userPhoneNumber.matches(phonePattern)) {
                         boolean result = DatabaseObject.insertUser(userEmail, userPassword, userPhoneNumber, userName);
                         if (result) {
-                            Intent intent = new Intent(SignupPage.this, MainActivity.class);
+                            Intent intent = new Intent(SignupPage.this, AuthPage.class);
                             startActivity(intent);
                             Toast.makeText(getApplicationContext(), "Signed Up Successfully", Toast.LENGTH_LONG).show();
                         } else {

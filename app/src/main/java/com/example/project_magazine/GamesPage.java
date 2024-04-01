@@ -19,7 +19,7 @@ public class GamesPage extends AppCompatActivity {
 
     RelativeLayout GamesMain;
     ScrollView SC;
-    LinearLayout articleContainerLayout; 
+    LinearLayout articleContainerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +66,7 @@ public class GamesPage extends AppCompatActivity {
             Bitmap bitmap = BitmapFactory.decodeByteArray(imageData, 0, imageData.length);
             articleImage.setImageBitmap(bitmap);
 
-            articleContainerLayout.addView(articleCard); 
+            articleContainerLayout.addView(articleCard);
         }
     }
 }

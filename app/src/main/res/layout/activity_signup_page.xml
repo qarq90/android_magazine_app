@@ -5,9 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary_color"
-    tools:context=".SignupPage"
     android:paddingTop="50dp"
-    >
+    tools:context=".SignupPage">
 
     <TextView
         android:layout_width="match_parent"
@@ -39,10 +38,10 @@
         android:layout_marginRight="50dp"
         android:background="@drawable/rounded_corner"
         android:hint="Enter email here..."
-        android:textSize="16dp"
         android:padding="10dp"
         android:textColor="@color/secondary_color"
         android:textColorHint="@color/hint_color"
+        android:textSize="16dp"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -64,10 +63,10 @@
         android:layout_marginRight="50dp"
         android:background="@drawable/rounded_corner"
         android:hint="Enter password here..."
-        android:textSize="16dp"
         android:padding="10dp"
-        android:textColorHint="@color/hint_color"
         android:textColor="@color/secondary_color"
+        android:textColorHint="@color/hint_color"
+        android:textSize="16dp"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -89,10 +88,10 @@
         android:layout_marginRight="50dp"
         android:background="@drawable/rounded_corner"
         android:hint="Enter phone number here..."
-        android:textSize="16dp"
-        android:textColorHint="@color/hint_color"
         android:padding="10dp"
         android:textColor="@color/secondary_color"
+        android:textColorHint="@color/hint_color"
+        android:textSize="16dp"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -112,12 +111,12 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="450dp"
         android:layout_marginRight="50dp"
-        android:textColorHint="@color/hint_color"
         android:background="@drawable/rounded_corner"
         android:hint="Enter Username here..."
         android:padding="10dp"
-        android:textSize="16dp"
         android:textColor="@color/secondary_color"
+        android:textColorHint="@color/hint_color"
+        android:textSize="16dp"
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
@@ -129,16 +128,15 @@
         android:layout_marginRight="30dp"
         android:background="@drawable/rounded_corner"
         android:orientation="horizontal"
-        android:padding="5dp"
-        >
+        android:padding="5dp">
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:background="@color/button_bg"
-            android:paddingRight="15dp"
-            android:paddingLeft="20dp"
             android:contentDescription="Like button"
+            android:paddingLeft="20dp"
+            android:paddingRight="15dp"
             android:src="@drawable/logout" />
 
         <TextView
@@ -160,16 +158,15 @@
         android:layout_marginRight="30dp"
         android:background="@drawable/rounded_corner"
         android:orientation="horizontal"
-        android:padding="5dp"
-        >
+        android:padding="5dp">
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:background="@color/button_bg"
-            android:paddingRight="15dp"
-            android:paddingLeft="20dp"
             android:contentDescription="Like button"
+            android:paddingLeft="20dp"
+            android:paddingRight="15dp"
             android:src="@drawable/signup" />
 
         <TextView

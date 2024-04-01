@@ -19,7 +19,7 @@ public class FashionPage extends AppCompatActivity {
 
     RelativeLayout FashionMain;
     ScrollView SC;
-    LinearLayout articleContainerLayout; 
+    LinearLayout articleContainerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class FashionPage extends AppCompatActivity {
         setContentView(R.layout.activity_fashion_page);
 
         FashionMain = findViewById(R.id.FashionMain);
-        articleContainerLayout = findViewById(R.id.articleContainerLayout); 
+        articleContainerLayout = findViewById(R.id.articleContainerLayout);
 
         LinearLayout goToBackToHomeHandler = findViewById(R.id.goBackToHome);
 
@@ -67,7 +67,7 @@ public class FashionPage extends AppCompatActivity {
             Bitmap bitmap = BitmapFactory.decodeByteArray(imageData, 0, imageData.length);
             articleImage.setImageBitmap(bitmap);
 
-            articleContainerLayout.addView(articleCard); 
+            articleContainerLayout.addView(articleCard);
         }
     }
 }

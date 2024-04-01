@@ -3,8 +3,10 @@ package com.example.project_magazine;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.CursorIndexOutOfBoundsException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class ECO_ECO_DB extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "eco_eco_database";
@@ -69,9 +71,20 @@ public class ECO_ECO_DB extends SQLiteOpenHelper {
         return result != -1;
     }
 
-    public Cursor checkIfUserExists() {
+    public boolean checkIfUserExists(String emailId, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
-        return db.rawQuery("SELECT * FROM " + TABLE_USERS, null);
+        String query = "Select * from " + TABLE_USERS + " Where " + USERS_COL_2 + "= '" + emailId + "' and " + USERS_COL_3 + "= '" + password + "'";
+        try {
+            Cursor cursor = db.rawQuery(query, null);
+            Log.d("query", "query " + cursor.moveToNext());
+            String name = cursor.getString(1);
+            String pass = cursor.getString(2);
+            Log.d("NAME", "name " + name);
+            Log.d("PASS", "pass " + pass);
+            return name.equals(emailId) && password.equals(pass);
+        } catch (CursorIndexOutOfBoundsException e) {
+            return false;
+        }
     }
 
     public boolean insertArticle(String articleAuthor, String articleTitle, String articleParaA, String articleParaB, byte[] articleImage, String articleType) {

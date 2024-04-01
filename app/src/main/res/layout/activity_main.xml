@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/primary_color"
     tools:context=".MainActivity"
-    android:paddingTop="50dp"
-    >
+    android:paddingTop="50dp">
 
     <TextView
         android:layout_width="match_parent"
@@ -29,8 +28,7 @@
         android:layout_marginRight="30dp"
         android:background="@drawable/rounded_corner"
         android:orientation="horizontal"
-        android:padding="10dp"
-        >
+        android:padding="10dp">
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -60,8 +58,7 @@
         android:layout_marginRight="30dp"
         android:background="@drawable/rounded_corner"
         android:orientation="horizontal"
-        android:padding="10dp"
-        >
+        android:padding="10dp">
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -91,8 +88,7 @@
         android:layout_marginRight="30dp"
         android:background="@drawable/rounded_corner"
         android:orientation="horizontal"
-        android:padding="10dp"
-        >
+        android:padding="10dp">
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -122,8 +118,7 @@
         android:layout_marginRight="30dp"
         android:background="@drawable/rounded_corner"
         android:orientation="horizontal"
-        android:padding="10dp"
-        >
+        android:padding="10dp">
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -153,8 +148,7 @@
         android:layout_marginRight="30dp"
         android:background="@drawable/rounded_corner"
         android:orientation="horizontal"
-        android:padding="10dp"
-        >
+        android:padding="10dp">
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -184,8 +178,7 @@
         android:layout_marginRight="30dp"
         android:background="@drawable/rounded_corner"
         android:orientation="horizontal"
-        android:padding="10dp"
-        >
+        android:padding="10dp">
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -215,8 +208,7 @@
         android:layout_marginRight="30dp"
         android:background="@drawable/rounded_corner"
         android:orientation="horizontal"
-        android:padding="10dp"
-        >
+        android:padding="10dp">
 
         <ImageButton
             android:layout_width="wrap_content"

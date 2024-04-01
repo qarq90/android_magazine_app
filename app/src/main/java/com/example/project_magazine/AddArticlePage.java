@@ -64,7 +64,7 @@ public class AddArticlePage extends AppCompatActivity {
                     String articleType = articleTypeSpinner.getSelectedItem().toString();
                     boolean result = DatabaseObject.insertArticle("qarq90", articleTitle, articleParaA, articleParaB, byteArray, articleType);
                     if (result) {
-                        Toast.makeText(getApplicationContext(), "Article Stored", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Article Stored", Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(getApplicationContext(), "Failed", Toast.LENGTH_LONG).show();
                     }

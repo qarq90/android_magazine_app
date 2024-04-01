@@ -11,9 +11,9 @@
     <ImageView
         android:id="@+id/articleImage"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="350dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/logout" />
+        android:src="@drawable/question_mark" />
 
     <TextView
         android:id="@+id/articleTitle"
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/articleTitle"
         android:padding="10dp"
-        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's ..."
+        android:text="404 - Article Not Found"
         android:textColor="@color/secondary_color"
         android:textSize="20dp" />
 
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/articleParaA"
         android:padding="10dp"
-        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's ..."
+        android:text="404 - Article Not Found"
         android:textColor="@color/secondary_color"
         android:textSize="20dp" />
 
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/articleParaB"
         android:padding="10dp"
-        android:text="Article Author"
+        android:text="404 - Article Not Found"
         android:textColor="@color/secondary_color"
         android:textSize="15dp" />
 </RelativeLayout>
