@@ -3,9 +3,7 @@ package com.example.project_magazine;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -45,18 +43,29 @@ public class AuthPage extends AppCompatActivity {
 
                 Cursor result = DatabaseObject.checkIfUserExists();
                 boolean isAuth = false;
-                Log.d("AuthPage", result.toString());
+                String dbEmail = "";
+                String dbPassword = "";
+
                 while (result.moveToNext()) {
-                    if (result.getString(0).equals(userEmail) && result.getString(1).equals(userPassword)) {
+                    dbEmail = result.getString(result.getColumnIndex("email"));
+                    dbPassword = result.getString(result.getColumnIndex("password"));
+
+                    if (dbEmail.equals(userEmail) && dbPassword.equals(userPassword)) {
                         isAuth = true;
+                        Intent sendToProfile = new Intent(AuthPage.this, ProfilePage.class);
+                        sendToProfile.putExtra("username", dbEmail);
+                        sendToProfile.putExtra("password", dbPassword);
+                        startActivity(sendToProfile);
+                        break;
                     }
                 }
-                if (isAuth) {
-                    Intent intent = new Intent(AuthPage.this, MainActivity.class);
-                    startActivity(intent);
-                } else {
+
+                result.close();
+
+                if (!isAuth) {
                     Toast.makeText(getApplicationContext(), "Invalid Credentials", Toast.LENGTH_LONG).show();
                 }
+
             }
         });
 

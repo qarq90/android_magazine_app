@@ -19,7 +19,7 @@ public class SportsPage extends AppCompatActivity {
 
     RelativeLayout SportsMain;
     ScrollView SC;
-    LinearLayout articleContainerLayout; 
+    LinearLayout articleContainerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class SportsPage extends AppCompatActivity {
         setContentView(R.layout.activity_sports_page);
 
         SportsMain = findViewById(R.id.SportsMain);
-        articleContainerLayout = findViewById(R.id.articleContainerLayout); 
+        articleContainerLayout = findViewById(R.id.articleContainerLayout);
 
         LinearLayout goToBackToHomeHandler = findViewById(R.id.goBackToHome);
         goToBackToHomeHandler.setOnClickListener(new View.OnClickListener() {
@@ -60,13 +60,13 @@ public class SportsPage extends AppCompatActivity {
             articleTitle.setText(result.getString(result.getColumnIndexOrThrow("ARTICLE_TITLE")));
             articleParaA.setText(result.getString(result.getColumnIndexOrThrow("ARTICLE_PARA_A")));
             articleParaB.setText(result.getString(result.getColumnIndexOrThrow("ARTICLE_PARA_B")));
-            articleAuthor.setText(result.getString(result.getColumnIndexOrThrow("ARTICLE_AUTHOR")));
+            articleAuthor.setText("Article Author : " + result.getString(result.getColumnIndexOrThrow("ARTICLE_AUTHOR")));
 
             byte[] imageData = result.getBlob(result.getColumnIndexOrThrow("ARTICLE_IMAGE"));
             Bitmap bitmap = BitmapFactory.decodeByteArray(imageData, 0, imageData.length);
             articleImage.setImageBitmap(bitmap);
 
-            articleContainerLayout.addView(articleCard); 
+            articleContainerLayout.addView(articleCard);
         }
     }
 }

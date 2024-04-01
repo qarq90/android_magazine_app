@@ -96,4 +96,11 @@ public class ECO_ECO_DB extends SQLiteOpenHelper {
         return db.rawQuery(query, (type != null && !type.isEmpty()) ? new String[]{type} : null);
     }
 
+    public Cursor fetchUser(String email, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {USERS_COL_2, USERS_COL_4, USERS_COL_5};
+        String selection = USERS_COL_2 + " = ? AND " + USERS_COL_3 + " = ?";
+        String[] selectionArgs = {email, password};
+        return db.query(TABLE_USERS, columns, selection, selectionArgs, null, null, null);
+    }
 }

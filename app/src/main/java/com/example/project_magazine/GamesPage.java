@@ -28,7 +28,7 @@ public class GamesPage extends AppCompatActivity {
         setContentView(R.layout.activity_games_page);
 
         GamesMain = findViewById(R.id.GamesMain);
-        articleContainerLayout = findViewById(R.id.articleContainerLayout); 
+        articleContainerLayout = findViewById(R.id.articleContainerLayout);
 
         LinearLayout goToBackToHomeHandler = findViewById(R.id.goBackToHome);
         goToBackToHomeHandler.setOnClickListener(new View.OnClickListener() {
@@ -60,7 +60,7 @@ public class GamesPage extends AppCompatActivity {
             articleTitle.setText(result.getString(result.getColumnIndexOrThrow("ARTICLE_TITLE")));
             articleParaA.setText(result.getString(result.getColumnIndexOrThrow("ARTICLE_PARA_A")));
             articleParaB.setText(result.getString(result.getColumnIndexOrThrow("ARTICLE_PARA_B")));
-            articleAuthor.setText(result.getString(result.getColumnIndexOrThrow("ARTICLE_AUTHOR")));
+            articleAuthor.setText("Article Author : " + result.getString(result.getColumnIndexOrThrow("ARTICLE_AUTHOR")));
 
             byte[] imageData = result.getBlob(result.getColumnIndexOrThrow("ARTICLE_IMAGE"));
             Bitmap bitmap = BitmapFactory.decodeByteArray(imageData, 0, imageData.length);

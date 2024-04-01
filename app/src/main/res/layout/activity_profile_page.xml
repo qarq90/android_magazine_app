@@ -2,42 +2,99 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/ProfileMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfilePage"
-    android:background="@color/primary_color"
-    >
+    android:paddingTop="50dp"
+    android:background="@color/primary_color">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/secondary_color"
-        android:text="P r o f i l e"
+        android:text="Profile"
         android:textAllCaps="true"
         android:layout_marginTop="30dp"
         android:textAlignment="center"
         android:textSize="30dp"
         tools:ignore="MissingConstraints" />
 
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:padding="10dp"
+        android:hint="Username"
+        android:background="@drawable/rounded_corner"
+        android:textColor="@color/secondary_color"
+        android:textColorHint="@color/hint_color"/>
+
+    <EditText
+        android:id="@+id/editTextPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextUsername"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:padding="10dp"
+        android:hint="Phone Number"
+        android:background="@drawable/rounded_corner"
+        android:textColor="@color/secondary_color"
+        android:textColorHint="@color/hint_color"/>
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextPhoneNumber"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:padding="10dp"
+        android:hint="Email"
+        android:background="@drawable/rounded_corner"
+        android:textColor="@color/secondary_color"
+        android:textColorHint="@color/hint_color"/>
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextEmail"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:padding="10dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:background="@drawable/rounded_corner"
+        android:textColor="@color/secondary_color"
+        android:textColorHint="@color/hint_color"
+        />
+
     <LinearLayout
         android:id="@+id/goBackToHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/editTextPassword"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="730dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/rounded_corner"
         android:orientation="horizontal"
-        android:padding="5dp"
-        >
+        android:padding="5dp">
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:background="@color/button_bg"
-            android:paddingRight="15dp"
             android:paddingLeft="20dp"
+            android:paddingRight="15dp"
             android:contentDescription="Like button"
             android:src="@drawable/home" />
 

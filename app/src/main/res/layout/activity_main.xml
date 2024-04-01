@@ -27,7 +27,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="150dp"
         android:layout_marginRight="30dp"
-        android:background="@color/button_bg"
+        android:background="@drawable/rounded_corner"
         android:orientation="horizontal"
         android:padding="10dp"
         >
@@ -58,7 +58,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="225dp"
         android:layout_marginRight="30dp"
-        android:background="@color/button_bg"
+        android:background="@drawable/rounded_corner"
         android:orientation="horizontal"
         android:padding="10dp"
         >
@@ -89,7 +89,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="300dp"
         android:layout_marginRight="30dp"
-        android:background="@color/button_bg"
+        android:background="@drawable/rounded_corner"
         android:orientation="horizontal"
         android:padding="10dp"
         >
@@ -120,7 +120,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="375dp"
         android:layout_marginRight="30dp"
-        android:background="@color/button_bg"
+        android:background="@drawable/rounded_corner"
         android:orientation="horizontal"
         android:padding="10dp"
         >
@@ -151,7 +151,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="450dp"
         android:layout_marginRight="30dp"
-        android:background="@color/button_bg"
+        android:background="@drawable/rounded_corner"
         android:orientation="horizontal"
         android:padding="10dp"
         >
@@ -182,7 +182,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="525dp"
         android:layout_marginRight="30dp"
-        android:background="@color/button_bg"
+        android:background="@drawable/rounded_corner"
         android:orientation="horizontal"
         android:padding="10dp"
         >
@@ -213,7 +213,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="600dp"
         android:layout_marginRight="30dp"
-        android:background="@color/button_bg"
+        android:background="@drawable/rounded_corner"
         android:orientation="horizontal"
         android:padding="10dp"
         >
