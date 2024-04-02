@@ -1,10 +1,14 @@
 package com.example.project_magazine;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -18,6 +22,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 public class AddArticlePage extends AppCompatActivity {
+    public static final String PREF_NAME = "MY_PREFS";
+    public static final String PREF_EMAIL = "";
     private static final int GALLERY_REQUEST_CODE = 100;
     private Uri photoFilePath;
     private Bitmap photoToStore;
@@ -53,23 +59,35 @@ public class AddArticlePage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
+                    SharedPreferences sharedPreferences = getSharedPreferences("eco", Context.MODE_PRIVATE);
+                    String email = sharedPreferences.getString("email", "");
+                    Log.d("EMAIL", email);
+
                     ECO_ECO_DB DatabaseObject = new ECO_ECO_DB(getApplicationContext());
+                    Cursor cur = DatabaseObject.fetchUser(email);
+                    cur.moveToNext();
+                    String fetchedUsername = cur.getString(0);
+                    Log.d("Username: " , fetchedUsername);
+
                     EditText articleTitleEditText = findViewById(R.id.articleTitle);
                     EditText articleParaAEditText = findViewById(R.id.articleParaA);
                     EditText articleParaBEditText = findViewById(R.id.articleParaB);
                     Spinner articleTypeSpinner = findViewById(R.id.articleType);
+
                     String articleTitle = articleTitleEditText.getText().toString();
                     String articleParaA = articleParaAEditText.getText().toString();
                     String articleParaB = articleParaBEditText.getText().toString();
                     String articleType = articleTypeSpinner.getSelectedItem().toString();
-                    boolean result = DatabaseObject.insertArticle("qarq90", articleTitle, articleParaA, articleParaB, byteArray, articleType);
+
+                    boolean result = DatabaseObject.insertArticle(fetchedUsername, articleTitle, articleParaA, articleParaB, byteArray, articleType);
                     if (result) {
-                        Toast.makeText(getApplicationContext(), "Article Stored", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Article Stored Successfully", Toast.LENGTH_SHORT).show();
                     } else {
-                        Toast.makeText(getApplicationContext(), "Failed", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Failed To Store Article", Toast.LENGTH_SHORT).show();
                     }
+
                 } catch (Exception e) {
-                    Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Select a smaller resolution image please...", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -86,7 +104,7 @@ public class AddArticlePage extends AppCompatActivity {
                 photoToStore.compress(Bitmap.CompressFormat.PNG, 100, stream);
                 byteArray = stream.toByteArray();
             } catch (IOException e) {
-                Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
     }

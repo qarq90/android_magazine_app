@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AuthPage"
+    android:paddingTop="50dp"
     android:background="@color/primary_color">
 
     <TextView
@@ -71,7 +72,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="550dp"
+        android:layout_marginTop="620dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/rounded_corner"
         android:orientation="horizontal"
@@ -102,7 +103,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="730dp"
+        android:layout_marginTop="400dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/rounded_corner"
         android:orientation="horizontal"

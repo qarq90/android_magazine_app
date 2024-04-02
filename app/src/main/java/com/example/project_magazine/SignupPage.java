@@ -51,15 +51,15 @@ public class SignupPage extends AppCompatActivity {
                         if (result) {
                             Intent intent = new Intent(SignupPage.this, AuthPage.class);
                             startActivity(intent);
-                            Toast.makeText(getApplicationContext(), "Signed Up Successfully", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Signed Up Successfully", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(getApplicationContext(), "SignUp Failed", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "SignUp Failed", Toast.LENGTH_SHORT).show();
                         }
                     } else {
-                        Toast.makeText(getApplicationContext(), "Invalid Email or Phone Number", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Invalid Email or Phone Number", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(getApplicationContext(), "Invalid Credentials", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Invalid Credentials", Toast.LENGTH_SHORT).show();
                 }
             }
         });

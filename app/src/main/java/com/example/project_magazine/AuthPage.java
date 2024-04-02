@@ -1,6 +1,8 @@
 package com.example.project_magazine;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -34,21 +36,30 @@ public class AuthPage extends AppCompatActivity {
 
                 String emailPattern = "[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}";
 
+                if (userEmail.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "Email Cant be Empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 if (!userEmail.matches(emailPattern)) {
-                    Toast.makeText(getApplicationContext(), "Invalid Email Format", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Invalid Email Format", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (userPassword.isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "Password cannot be empty", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Password cannot be empty", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (success) {
+                    SharedPreferences sharedPreferences = getSharedPreferences("eco", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("email", userEmail);
+                    editor.apply();
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                    Toast.makeText(getApplicationContext(), "Login success ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Login success ", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "Login failed ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Incorrect Email or Password", Toast.LENGTH_SHORT).show();
                 }
             }
         });

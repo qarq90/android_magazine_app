@@ -1,15 +1,26 @@
 package com.example.project_magazine;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ProfilePage extends AppCompatActivity {
+    LinearLayout articleContainerLayout;
+    RelativeLayout ProfileMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,50 +28,76 @@ public class ProfilePage extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_profile_page);
 
-        LinearLayout goToBackToHomeHandler = (LinearLayout) findViewById(R.id.goBackToHome);
-        goToBackToHomeHandler.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ProfilePage.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
+        ProfileMain = findViewById(R.id.ProfileMain);
+        articleContainerLayout = findViewById(R.id.articleContainerLayout);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("eco", Context.MODE_PRIVATE);
+        String email = sharedPreferences.getString("email", "");
+        Log.d("EMAIL", email);
+
+        if (email != "") {
+            ECO_ECO_DB DatabaseObject = new ECO_ECO_DB(getApplicationContext());
+            Cursor cur = DatabaseObject.fetchUser(email);
+            cur.moveToNext();
+            String fetchedUsername = cur.getString(0);
+            String fetchedPhoneNumber = cur.getString(1);
+
+            EditText editTextUsername = findViewById(R.id.editTextUsername);
+            EditText editTextPhoneNumber = findViewById(R.id.editTextPhoneNumber);
+            EditText editTextEmail = findViewById(R.id.editTextEmail);
+
+            editTextUsername.setText(fetchedUsername);
+            editTextPhoneNumber.setText(fetchedPhoneNumber);
+            editTextEmail.setText(email);
+        }
+
+//        LinearLayout goToBackToHomeHandler = (LinearLayout) findViewById(R.id.goBackToHome);
+//        goToBackToHomeHandler.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(ProfilePage.this, MainActivity.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 
     protected void onResume() {
         super.onResume();
-//        Intent intent = getIntent();
-//        if (intent != null) {
-//            String username = intent.getStringExtra("username");
-//            String password = intent.getStringExtra("password");
-//            if (username != null && password != null) { // Check if both username and password are not null
-//                ECO_ECO_DB DatabaseObject = new ECO_ECO_DB(getApplicationContext());
-//                Cursor currentUser = DatabaseObject.fetchUser(username, password);
-//                if (currentUser != null && currentUser.moveToFirst()) {
-//                    String fetchedUsername = currentUser.getString(currentUser.getColumnIndex("username"));
-//                    String fetchedPhoneNumber = currentUser.getString(currentUser.getColumnIndex("phoneNumber"));
-//                    String fetchedEmail = currentUser.getString(currentUser.getColumnIndex("email"));
-//
-//                    EditText editTextUsername = findViewById(R.id.editTextUsername);
-//                    EditText editTextPhoneNumber = findViewById(R.id.editTextPhoneNumber);
-//                    EditText editTextEmail = findViewById(R.id.editTextEmail);
-//                    EditText editTextPassword = findViewById(R.id.editTextPassword);
-//
-//                    editTextUsername.setText(fetchedUsername);
-//                    editTextPhoneNumber.setText(fetchedPhoneNumber);
-//                    editTextEmail.setText(fetchedEmail);
-//                    editTextPassword.setText(password); // Assuming you want to display the password for the user
-//                }
-//                if (currentUser != null) {
-//                    currentUser.close();
-//                }
-//            } else {
-//                // Handle the case where username or password is null
-//                // For example, display an error message or redirect the user
-//            }
-        AuthPage AP = new AuthPage();
-        String currUser = AP.userEmail;
-        String currPass = AP.userPassword;
-        Log.d("Current User", currUser + " " + currPass);
+        displayArticles();
+    }
+
+    private void displayArticles() {
+        SharedPreferences sharedPreferences = getSharedPreferences("eco", Context.MODE_PRIVATE);
+        String email = sharedPreferences.getString("email", "");
+        Log.d("EMAIL", email);
+
+        if (email != "") {
+            ECO_ECO_DB DatabaseObject = new ECO_ECO_DB(getApplicationContext());
+            Cursor cur = DatabaseObject.fetchUser(email);
+            cur.moveToNext();
+            String fetchedUsername = cur.getString(0);
+
+            Cursor result = DatabaseObject.fetchUsersArticles(fetchedUsername);
+
+            while (result.moveToNext()) {
+                RelativeLayout articleCard = (RelativeLayout) getLayoutInflater().inflate(R.layout.activity_article_card, null);
+                ImageView articleImage = articleCard.findViewById(R.id.articleImage);
+                TextView articleTitle = articleCard.findViewById(R.id.articleTitle);
+                TextView articleParaA = articleCard.findViewById(R.id.articleParaA);
+                TextView articleParaB = articleCard.findViewById(R.id.articleParaB);
+                TextView articleAuthor = articleCard.findViewById(R.id.articleAuthor);
+
+                articleTitle.setText(result.getString(result.getColumnIndexOrThrow("ARTICLE_TITLE")));
+                articleParaA.setText(result.getString(result.getColumnIndexOrThrow("ARTICLE_PARA_A")));
+                articleParaB.setText(result.getString(result.getColumnIndexOrThrow("ARTICLE_PARA_B")));
+                articleAuthor.setText("Article Author : " + result.getString(result.getColumnIndexOrThrow("ARTICLE_AUTHOR")));
+
+                byte[] imageData = result.getBlob(result.getColumnIndexOrThrow("ARTICLE_IMAGE"));
+                Bitmap bitmap = BitmapFactory.decodeByteArray(imageData, 0, imageData.length);
+                articleImage.setImageBitmap(bitmap);
+
+                articleContainerLayout.addView(articleCard);
+            }
+        }
     }
 }

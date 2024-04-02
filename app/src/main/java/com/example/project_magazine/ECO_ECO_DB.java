@@ -109,11 +109,28 @@ public class ECO_ECO_DB extends SQLiteOpenHelper {
         return db.rawQuery(query, (type != null && !type.isEmpty()) ? new String[]{type} : null);
     }
 
+    public Cursor fetchUser(String email) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {USERS_COL_5, USERS_COL_4, USERS_COL_2};
+        String selection = USERS_COL_2 + " = ?";
+        String[] selectionArgs = {email};
+        return db.query(TABLE_USERS, columns, selection, selectionArgs, null, null, null);
+    }
+
     public Cursor fetchUser(String email, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
         String[] columns = {USERS_COL_2, USERS_COL_4, USERS_COL_5};
         String selection = USERS_COL_2 + " = ? AND " + USERS_COL_3 + " = ?";
         String[] selectionArgs = {email, password};
         return db.query(TABLE_USERS, columns, selection, selectionArgs, null, null, null);
+    }
+
+    public Cursor fetchUsersArticles(String username){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT * FROM " + TABLE_ARTICLES;
+        if (username != null && !username.isEmpty()) {
+            query += " WHERE " + ARTICLE_AUTHOR + " = ?";
+        }
+        return db.rawQuery(query, (username != null && !username.isEmpty()) ? new String[]{username} : null);
     }
 }
