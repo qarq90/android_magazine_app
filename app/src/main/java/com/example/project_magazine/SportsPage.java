@@ -40,11 +40,11 @@ public class SportsPage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        displayArticles();
     }
 
     protected void onResume() {
         super.onResume();
-        displayArticles();
     }
 
     public void displayArticles() {

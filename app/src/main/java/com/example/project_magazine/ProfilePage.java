@@ -50,20 +50,11 @@ public class ProfilePage extends AppCompatActivity {
             editTextPhoneNumber.setText(fetchedPhoneNumber);
             editTextEmail.setText(email);
         }
-
-//        LinearLayout goToBackToHomeHandler = (LinearLayout) findViewById(R.id.goBackToHome);
-//        goToBackToHomeHandler.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(ProfilePage.this, MainActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        displayArticles();
     }
 
     protected void onResume() {
         super.onResume();
-        displayArticles();
     }
 
     private void displayArticles() {
