@@ -8,6 +8,20 @@ Eco Eco is an Android application built in Java that serves as a magazine platfo
 - **Categories:** The app provides four main categories: sports, fashion, entertainment, and games, to browse through different types of content.
 - **Article Submission:** Users can submit their own articles to share eco-friendly content with the community.
 
+<br>
+
+![image](https://github.com/qarq90/android_magazine_app/assets/124421417/fa8c9713-ed47-49ee-b1ce-9339ce70db26)
+
+<br>
+
+![image](https://github.com/qarq90/android_magazine_app/assets/124421417/6d1b6361-2aef-4f9f-8e05-5e01807fc714)
+
+<br>
+
+![image](https://github.com/qarq90/android_magazine_app/assets/124421417/f997eb89-8d33-4067-ad81-d55c35d4623e)
+
+<br>
+
 ## Technologies Used
 
 - Java
@@ -15,7 +29,7 @@ Eco Eco is an Android application built in Java that serves as a magazine platfo
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/yourusername/eco-eco-magazine.git`
+1. Clone the repository: `git clone https://github.com/qarq90/android_magazine_app.git`
 2. Open the project in Android Studio.
 3. Build and run the project on an Android device or emulator.
 
@@ -24,10 +38,11 @@ Eco Eco is an Android application built in Java that serves as a magazine platfo
 1. Launch the Eco Eco app on your Android device.
 2. Sign up or log in to your account.
 3. Explore the different categories to discover eco-friendly content.
-4. To submit your own article:
-   - Navigate to the "Submit Article" section.
-   - Fill out the required information.
-   - Submit your article for review by the app administrators.
+4. All pages will be empty, so make sure to add articles to each category.
+5. To Add your own article:
+   - Navigate to the "Add Article" section.
+   - Fill out the required information (2 Paragraphs and 1 Image).
+   - Add your article.
 
 ## Contributing
 
