@@ -9,17 +9,13 @@ Eco Eco is an Android application built in Java that serves as a magazine platfo
 - **Article Submission:** Users can submit their own articles to share eco-friendly content with the community.
 
 <br>
-
+<div style="display:flex">
 ![image](https://github.com/qarq90/android_magazine_app/assets/124421417/6d1b6361-2aef-4f9f-8e05-5e01807fc714)
-
-<br>
 
 ![image](https://github.com/qarq90/android_magazine_app/assets/124421417/fa8c9713-ed47-49ee-b1ce-9339ce70db26)
 
-<br>
-
 ![image](https://github.com/qarq90/android_magazine_app/assets/124421417/f997eb89-8d33-4067-ad81-d55c35d4623e)
-
+</div>
 <br>
 
 ## Technologies Used
