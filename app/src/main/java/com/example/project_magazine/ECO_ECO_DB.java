@@ -125,7 +125,7 @@ public class ECO_ECO_DB extends SQLiteOpenHelper {
         return db.query(TABLE_USERS, columns, selection, selectionArgs, null, null, null);
     }
 
-    public Cursor fetchUsersArticles(String username){
+    public Cursor fetchUsersArticles(String username) {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT * FROM " + TABLE_ARTICLES;
         if (username != null && !username.isEmpty()) {

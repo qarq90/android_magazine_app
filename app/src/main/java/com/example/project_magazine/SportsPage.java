@@ -2,7 +2,6 @@ package com.example.project_magazine;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.CursorIndexOutOfBoundsException;
 import android.database.sqlite.SQLiteException;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -33,12 +32,9 @@ public class SportsPage extends AppCompatActivity {
         articleContainerLayout = findViewById(R.id.articleContainerLayout);
 
         LinearLayout goToBackToHomeHandler = findViewById(R.id.goBackToHome);
-        goToBackToHomeHandler.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SportsPage.this, MainActivity.class);
-                startActivity(intent);
-            }
+        goToBackToHomeHandler.setOnClickListener(v -> {
+            Intent intent = new Intent(SportsPage.this, MainActivity.class);
+            startActivity(intent);
         });
         displayArticles();
     }
@@ -50,7 +46,7 @@ public class SportsPage extends AppCompatActivity {
     public void displayArticles() {
         ECO_ECO_DB DatabaseObject = new ECO_ECO_DB(getApplicationContext());
 
-        try{
+        try {
             Cursor result = DatabaseObject.getArticles("Sports");
             while (result.moveToNext()) {
                 RelativeLayout articleCard = (RelativeLayout) getLayoutInflater().inflate(R.layout.activity_article_card, null);
@@ -71,7 +67,7 @@ public class SportsPage extends AppCompatActivity {
 
                 articleContainerLayout.addView(articleCard);
             }
-        } catch (SQLiteException e){
+        } catch (SQLiteException e) {
             RelativeLayout articleCard = (RelativeLayout) getLayoutInflater().inflate(R.layout.activity_article_card, null);
             TextView articleTitle = articleCard.findViewById(R.id.articleTitle);
             articleTitle.setText("No articles Found. \n Please upload a few articles");

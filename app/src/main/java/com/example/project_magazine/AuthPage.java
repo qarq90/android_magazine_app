@@ -23,13 +23,13 @@ public class AuthPage extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_auth_page);
 
-        LinearLayout goToBackToHomeHandler = (LinearLayout) findViewById(R.id.goBackToHome);
+        LinearLayout goToBackToHomeHandler = findViewById(R.id.goBackToHome);
         goToBackToHomeHandler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ECO_ECO_DB DatabaseObject = new ECO_ECO_DB(getApplicationContext());
-                EditText userEmailEditText = (EditText) findViewById(R.id.userAuthEmail);
-                EditText userPasswordEditText = (EditText) findViewById(R.id.userAuthPassword);
+                EditText userEmailEditText = findViewById(R.id.userAuthEmail);
+                EditText userPasswordEditText = findViewById(R.id.userAuthPassword);
                 userEmail = userEmailEditText.getText().toString();
                 userPassword = userPasswordEditText.getText().toString();
                 boolean success = DatabaseObject.checkIfUserExists(userEmail, userPassword);
@@ -64,7 +64,7 @@ public class AuthPage extends AppCompatActivity {
             }
         });
 
-        LinearLayout goToSignup = (LinearLayout) findViewById(R.id.goToSignUp);
+        LinearLayout goToSignup = findViewById(R.id.goToSignUp);
         goToSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

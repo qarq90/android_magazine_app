@@ -17,7 +17,7 @@ public class SignupPage extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_signup_page);
 
-        LinearLayout goToLogout = (LinearLayout) findViewById(R.id.goToLogout);
+        LinearLayout goToLogout = findViewById(R.id.goToLogout);
         goToLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -26,7 +26,7 @@ public class SignupPage extends AppCompatActivity {
             }
         });
 
-        LinearLayout goToBackToHomeHandler = (LinearLayout) findViewById(R.id.goBackToHome);
+        LinearLayout goToBackToHomeHandler = findViewById(R.id.goBackToHome);
         goToBackToHomeHandler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

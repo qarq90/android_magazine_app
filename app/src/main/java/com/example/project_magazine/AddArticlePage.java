@@ -35,7 +35,7 @@ public class AddArticlePage extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_add_article_page);
 
-        LinearLayout goToBackToHomeHandler = (LinearLayout) findViewById(R.id.goBackToHome);
+        LinearLayout goToBackToHomeHandler = findViewById(R.id.goBackToHome);
         goToBackToHomeHandler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,7 +44,7 @@ public class AddArticlePage extends AppCompatActivity {
             }
         });
 
-        LinearLayout chooseImageHandler = (LinearLayout) findViewById(R.id.addImage);
+        LinearLayout chooseImageHandler = findViewById(R.id.addImage);
         chooseImageHandler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,7 +54,7 @@ public class AddArticlePage extends AppCompatActivity {
             }
         });
 
-        LinearLayout addArticle = (LinearLayout) findViewById(R.id.addArticle);
+        LinearLayout addArticle = findViewById(R.id.addArticle);
         addArticle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,7 +67,7 @@ public class AddArticlePage extends AppCompatActivity {
                     Cursor cur = DatabaseObject.fetchUser(email);
                     cur.moveToNext();
                     String fetchedUsername = cur.getString(0);
-                    Log.d("Username: " , fetchedUsername);
+                    Log.d("Username: ", fetchedUsername);
 
                     EditText articleTitleEditText = findViewById(R.id.articleTitle);
                     EditText articleParaAEditText = findViewById(R.id.articleParaA);

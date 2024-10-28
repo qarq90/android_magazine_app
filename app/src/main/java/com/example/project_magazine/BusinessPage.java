@@ -15,9 +15,9 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class EntertainmentPage extends AppCompatActivity {
+public class BusinessPage extends AppCompatActivity {
 
-    RelativeLayout EntertainmentMain;
+    RelativeLayout BusinessMain;
     ScrollView SC;
     LinearLayout articleContainerLayout;
 
@@ -25,14 +25,14 @@ public class EntertainmentPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_entertainment_page);
+        setContentView(R.layout.activity_business_page);
 
-        EntertainmentMain = findViewById(R.id.EntertainmentMain);
+        BusinessMain = findViewById(R.id.BusinessMain);
         articleContainerLayout = findViewById(R.id.articleContainerLayout);
 
         LinearLayout goToBackToHomeHandler = findViewById(R.id.goBackToHome);
         goToBackToHomeHandler.setOnClickListener(v -> {
-            Intent intent = new Intent(EntertainmentPage.this, MainActivity.class);
+            Intent intent = new Intent(BusinessPage.this, MainActivity.class);
             startActivity(intent);
         });
         displayArticles();
@@ -44,7 +44,7 @@ public class EntertainmentPage extends AppCompatActivity {
 
     public void displayArticles() {
         ECO_ECO_DB DatabaseObject = new ECO_ECO_DB(getApplicationContext());
-        Cursor result = DatabaseObject.getArticles("Entertainment");
+        Cursor result = DatabaseObject.getArticles("Business");
 
         while (result.moveToNext()) {
             RelativeLayout articleCard = (RelativeLayout) getLayoutInflater().inflate(R.layout.activity_article_card, null);

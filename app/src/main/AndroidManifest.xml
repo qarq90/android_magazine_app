@@ -16,6 +16,10 @@
         android:theme="@style/Theme.Project_magazine"
         tools:targetApi="31">
         <activity
+            android:name=".BusinessPage"
+            android:exported="false"
+            />
+        <activity
             android:name=".ArticleCard"
             android:exported="false" />
         <activity
